@@ -37,7 +37,6 @@ before_install:
   - mysql -e 'CREATE DATABASE eagle;'
 
 before_script:
-  - cd src
   - phpenv config-rm xdebug.ini
   - cp .env.example .env
   - travis_retry composer install --no-interaction
