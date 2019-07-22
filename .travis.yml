@@ -1,0 +1,48 @@
+cache:
+    apt: true
+    directories:
+      - $HOME/.composer/cache/files
+notifications:
+  email:
+    recipients:
+      - tic@fashionalia.es
+    on_success: always
+    on_failure: always
+
+dist: xenial
+
+sudo: required
+
+language: php
+
+php:
+  - "7.0"
+
+services:
+  - mysql
+
+cache:
+  bundler: true
+  directories:
+    - $COMPOSER_CACHE_DIR
+    - $HOME/.composer/cache
+
+matrix:
+  - fast_finish: true
+
+before_install:
+  # Load cached docker images
+  - sudo locale-gen es_ES
+  - sudo update-locale
+  - mysql -e 'CREATE DATABASE eagle;'
+
+before_script:
+  - cd src
+  - phpenv config-rm xdebug.ini
+  - cp .env.example .env
+  - travis_retry composer install --no-interaction
+  - php artisan key:generate
+  - php artisan migrate
+  - php artisan serve --port 8082 &
+
+script: composer test

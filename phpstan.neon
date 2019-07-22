@@ -1,0 +1,13 @@
+parameters:
+    autoload_files:
+    ignoreErrors:
+        - '#Call to an undefined static method .*Models.*find.*#'
+        - '#Call to an undefined static method .*Models.*create.*#'
+    reportUnmatchedIgnoredErrors: false
+    excludes_analyse:
+        - */vendor/*
+        - */storage/*
+        - */database/*
+        - */tests/*
+    includes:
+        - vendor/phpstan/phpstan-strict-rules/rules.neon
