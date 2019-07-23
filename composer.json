@@ -49,7 +49,7 @@
         ],
         "test": [
             "vendor/bin/phpstan analyse -c phpstan.neon . --level 7",
-            "vendor/bin/phpunit"
+            "vendor/bin/phpunit --testsuite Unit"
         ]
     },
     "config": {
