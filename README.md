@@ -1,11 +1,11 @@
-#Fashionalia Eagle
+# Fashionalia Eagle
 Esta aplicación es un middleware entre Shopify y el consumidor final de la información (Fashionalia) para que la marca pueda gestionar mejor los permisos de letura/escritura en pedidos.
 
 Shopify, cuando da acceso vía API a lectura/escritura, lo da de manera global. Es posible que sólo se quieran dar a Fashionalia permisos de lectura de aquellos pedidos que Fashionalia ha creado.
 
 Este proyecto se ofrece para que el propio cliente lo aloje en su plataforma y tenga la propiedad del código, pudiendo así verificar que nosotros sólo tenemos acceso a la información adecuada.
 
-##Instalación
+## Instalación
 
 El proyecto es una aplicación en PHP 7.0 y Laravel 5.5.
 
@@ -69,31 +69,31 @@ php artisan migrate
 
 Con esto hemos instalado los paquetes y creado la estructura en base de datos para almacenar los ids de los pedidos.
 
-##Configuración web
+## Configuración web
 
 No se ofrecen ficheros de configuración para NGINX/Apache.
 
-##Endpoints
+## Endpoints
 
 Los endpoints están definidos en el fichero api.php, y son
 
-###GET /ping
+### GET /ping
 
 Simple endpoint para poder monitorizar la salud del proyecto
 
-###GET /order
+### GET /order
 
 Obtención de los datos de un pedido en base a su ID
 
-###GET /catalog
+### GET /catalog
 
 Endpoint intermediario para que nos descarguemos el catálogo de la marca
 
-###POST /order
+### POST /order
 
 Endpoint para grabación de pedidos
 
-##Tests
+## Tests
 
 El proyecto se ofrece con una suite completa de tests. Para ejecutarlos
 
