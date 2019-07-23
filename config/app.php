@@ -17,10 +17,8 @@ return [
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
-        Illuminate\Encryption\EncryptionServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         // Illuminate\Foundation\Providers\FoundationServiceProvider::class,
-        Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
