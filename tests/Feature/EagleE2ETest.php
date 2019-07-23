@@ -13,8 +13,6 @@ class EagleE2ETest extends TestCase
     /** @test */
     public function it_creates_an_order_and_retrieves_it()
     {
-        $this->markTestSkipped();
-
         if (config('app.url') === null) {
             throw new \Exception("Please configure the .env file");
         }
