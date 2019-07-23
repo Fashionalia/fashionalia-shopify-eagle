@@ -1,16 +1,25 @@
 <?php
 namespace Eagle\Managers;
 
+use Illuminate\Config\Repository as Config;
 use PHPShopify\ShopifySDK;
 
 class ShopifyManager
 {
-    public function initialize($url, $key, $password): ShopifySDK
+    /** @var Config */
+    private $config;
+
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
+    public function getInstance(): ShopifySDK
     {
         return ShopifySDK::config([
-            'ShopUrl'  => $url,
-            'ApiKey'   => $key,
-            'Password' => $password,
+            'ShopUrl'  => $this->config->get('shopify.url'),
+            'ApiKey'   => $this->config->get('shopify.key'),
+            'Password' => $this->config->get('shopify.password'),
         ]);
     }
 }

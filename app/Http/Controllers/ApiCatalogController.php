@@ -27,7 +27,7 @@ class ApiCatalogController extends Controller
         try {
 
             $response = $this->shopify_manager
-                ->initialize(config('shopify.url'), config('shopify.key'), config('shopify.password'))
+                ->getInstance()
                 ->Product->get($request->all());
 
             return response(\json_encode($response), 200);

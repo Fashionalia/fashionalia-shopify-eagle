@@ -41,7 +41,7 @@ class ApiCatalogControllerTest extends TestCase
             ->getMock();
 
         $mock2 = \Mockery::mock(ShopifyManager::class)
-            ->shouldReceive('initialize')->once()->with(\Mockery::type('string'), \Mockery::type('string'), \Mockery::type('string'))->andReturn($mock)
+            ->shouldReceive('getInstance')->once()->andReturn($mock)
             ->getMock();
 
         app()->instance(ShopifyManager::class, $mock2);

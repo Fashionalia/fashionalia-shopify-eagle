@@ -33,7 +33,7 @@ class ApiOrderController extends Controller
         try {
 
             $response = $this->shopify_manager
-                ->initialize(config('shopify.url'), config('shopify.key'), config('shopify.password'))
+                ->getInstance()
                 ->Order($request->get('id'))->get();
 
             return response(\json_encode($response), 200);

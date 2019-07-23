@@ -29,7 +29,7 @@ class ApiOrdersCreateController extends Controller
         try {
 
             $response = $this->shopify_manager
-                ->initialize(config('shopify.url'), config('shopify.key'), config('shopify.password'))
+                ->getInstance()
                 ->Order->post($request->all());
 
             $this->order_repository->save($response['id']); // save the order id so we're allowed to get info about it later
