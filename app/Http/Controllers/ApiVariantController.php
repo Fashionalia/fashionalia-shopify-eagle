@@ -28,7 +28,7 @@ class ApiVariantController extends Controller
 
             $response = $this->shopify_manager
                 ->getInstance()
-                ->ProductVariant($request->id)->get();
+                ->ProductVariant($request->get('id'))->get();
 
             return response(\json_encode($response), 200);
 

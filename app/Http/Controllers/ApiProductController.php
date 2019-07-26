@@ -28,7 +28,7 @@ class ApiProductController extends Controller
 
             $response = $this->shopify_manager
                 ->getInstance()
-                ->Product($request->id)->get();
+                ->Product($request->get('id'))->get();
 
             return response(\json_encode($response), 200);
 
