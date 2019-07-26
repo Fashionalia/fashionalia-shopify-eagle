@@ -85,6 +85,10 @@ Simple endpoint para poder monitorizar la salud del proyecto
 
 Obtención de los datos de un pedido en base a su ID
 
+### GET /variant
+
+Obtención de los datos de una variación en base a su ID
+
 ### GET /catalog
 
 Endpoint intermediario para que nos descarguemos el catálogo de la marca

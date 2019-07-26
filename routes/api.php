@@ -5,3 +5,4 @@ Route::get('ping', 'ApiPingController');
 Route::get('order', 'ApiOrderController');
 Route::get('catalog', 'ApiCatalogController');
 Route::post('order', 'ApiOrdersCreateController');
+Route::get('variant', 'ApiVariantController');
